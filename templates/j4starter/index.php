@@ -46,7 +46,13 @@ $testparam =  $this->params->get('testparam');
 $templatePath = 'templates/' . $this->template;
 
 // Load our frameworks
-JHtml::_('bootstrap.framework');
+// We need dropdown for the menu
+Joomla\CMS\HTML\HTMLHelper::_('bootstrap.dropdown', '.selector', []);
+// Use only that you need
+// uncomment for exemple :
+// \Joomla\CMS\HTML\HTMLHelper::_('bootstrap.alert', '.selector');
+// \Joomla\CMS\HTML\HTMLHelper::_('bootstrap.button', '.selector');
+// All options, visit https://gist.github.com/dgrammatiko/efb3de4aa7cab4813a244f93f73cc0fd
 JHtml::_('jquery.framework');
 
 //Register our web assets (Css/JS)
